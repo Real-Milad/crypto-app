@@ -1,7 +1,10 @@
+import { Home } from "./components/template/Home"
 
 export const App = () => {
   
   return (
-    <div>App</div>
+    <div>
+      <Home />
+    </div>
   )
 }
