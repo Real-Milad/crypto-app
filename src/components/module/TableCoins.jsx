@@ -1,6 +1,16 @@
 import { TableRow } from "./TableRow";
+import { Triangle } from "react-loader-spinner"
 
-export const TableCoins = ({ coins }) => {
+
+export const TableCoins = ({ coins, isLoading, currency }) => {
+
+  if (isLoading) {
+    return (
+      <div className="w-full h-screen flex justify-center items-center">
+        <Triangle height="200" width="200" color="#982598"/>
+      </div>
+    )
+  }
 
   return (
     <div className="min-h-screen ">
@@ -33,7 +43,7 @@ export const TableCoins = ({ coins }) => {
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100">
-                {coins.map(coin => <TableRow coin={coin} key={coin.id} />)}
+                {coins?.map(coin => <TableRow coin={coin} key={coin.id} currency={currency} />)}
               </tbody>
             </table>
           </div>

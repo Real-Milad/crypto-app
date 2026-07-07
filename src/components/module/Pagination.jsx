@@ -28,20 +28,19 @@ export const Pagination = ({ page, setPage, totalPage }) => {
       <button 
         disabled={page === 1} 
         onClick={() => setPage(prev => prev - 1)}
-        className="rounded-lg bg-purple-300  py-1 px-4 text-neutral-700 
+        className="rounded-lg bg-purple-300 py-1 px-4 text-neutral-700 
         text-[14px] font-bold font-sans hover:bg-purple-400 disabled:opacity-50"
       >Prev</button>
 
       <div className="inline-flex gap-7 px-7">
         {visiblePages.map((p, i) => 
           <button 
-          key={i} 
-          onClick={() => p !== "..." && setPage(p) } 
-          className={`
-            text-neutral-500 font-bold
-            ${page === p && "text-purple-400 bg-purple-200"} 
-            ${p !== "..." && "border border-purple-300 rounded-lg py-0.5 px-2"} 
-          `}
+            key={i} 
+            onClick={() => p !== "..." && setPage(p) } 
+            className={`text-neutral-500 font-bold
+              ${page === p && "text-purple-400 bg-purple-200"} 
+              ${p !== "..." && "border border-purple-300 rounded-lg py-0.5 px-2"} 
+            `}
           >{p}</button>
         )}
       </div>
@@ -49,7 +48,7 @@ export const Pagination = ({ page, setPage, totalPage }) => {
       <button 
         disabled={page === totalPage} 
         onClick={() => setPage(prev => prev + 1)}
-        className="rounded-lg bg-purple-300  py-1 px-4 text-neutral-700 
+        className="rounded-lg bg-purple-300 py-1 px-4 text-neutral-700 
         text-[14px] font-bold font-sans hover:bg-purple-400 disabled:opacity-50"
       >Next</button>
 
